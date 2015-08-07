@@ -1,0 +1,21 @@
+apply plugin: 'java'
+
+// HACK! Java projects can't depend on Android Library projects
+sourceSets {
+  main {
+    java {
+      srcDirs = ['src/main/java', '../butterknife/src/main/java']
+    }
+  }
+}
+
+dependencies {
+  compile 'com.google.android:android:4.1.1.4'
+  compile 'com.google.auto.service:auto-service:1.0-rc2'
+
+  testCompile deps.festandroid
+  testCompile deps.festassert
+  testCompile deps.junit
+  testCompile deps.robolectric
+  testCompile 'com.google.testing.compile:compile-testing:0.6'
+}

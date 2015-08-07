@@ -22,9 +22,11 @@ import butterknife.OnPageChange;
 import butterknife.OnTextChanged;
 import butterknife.OnTouch;
 
+import com.google.auto.service.AutoService;
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.Filer;
 import javax.annotation.processing.ProcessingEnvironment;
+import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.AnnotationMirror;
@@ -67,6 +69,7 @@ import static javax.lang.model.element.Modifier.PRIVATE;
 import static javax.lang.model.element.Modifier.STATIC;
 import static javax.tools.Diagnostic.Kind.ERROR;
 
+@AutoService(Processor.class)
 public final class ButterKnifeProcessor extends AbstractProcessor {
   static final String VIEW_TYPE = "android.view.View";
   private static final String COLOR_STATE_LIST_TYPE = "android.content.res.ColorStateList";
