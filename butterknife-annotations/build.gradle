@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'checkstyle'
+
+targetCompatibility = JavaVersion.VERSION_1_7
+sourceCompatibility = JavaVersion.VERSION_1_7
+
+checkstyle {
+    configFile project.file('../config/checkstyle/checkstyle.xml')
+    showViolations true
+}
+
+dependencies {
+    compile 'com.google.android:android:4.1.1.4'
+}
